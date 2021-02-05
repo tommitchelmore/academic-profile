@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap');
+@import "tailwindcss/base";
+
+#card {
+    box-shadow:  20px 20px 60px #cccccc,
+                -20px -20px 60px #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+    #card {
+        box-shadow:  8px 8px 16px #1a1a1a,
+             -8px -8px 16px #242424;
+    }
+}
+.icon {
+    @apply flex items-center py-1;
+}
+.icon > svg {
+    @apply mr-3 h-5 w-5 stroke-current text-dark-100 dark:text-light-500;
+}
+.icon > a {
+    @apply text-dark-100 dark:text-light-500 relative font-heading;
+}
+.icon > a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    @apply border-blue border-b-2 h-full w-0 transition-all;
+}
+
+.icon > a:hover::before {
+    @apply w-full;
+}
+.icon > a:visited {
+    @apply text-dark-100 dark:text-light-500;
+}
+
+
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
